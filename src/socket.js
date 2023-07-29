@@ -12,7 +12,7 @@ export const state = reactive({
 // "undefined" means the URL will be computed from the `window.location` object
 const URL = process.env.NODE_ENV === "production" ? undefined : "http://localhost:3000";
 
-export const socket = io(URL, {autoConnect: true});
+export const socket = io("https://salom0server.vercel.app", {autoConnect: true});
 
 socket.on("connect", () => {
   state.connected = true;
